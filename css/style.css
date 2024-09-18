@@ -166,11 +166,6 @@ a:focus {
   align-items: center; /* This centers the children vertically */
 }
 
-.col-md-6 {
-  display : flex;
-  align-items: center; /* This centers the children vertically */
-  justify-content: center;
-}
 
 .read-more-about-us{
   align-items: center;
