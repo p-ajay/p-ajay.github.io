@@ -45,14 +45,20 @@ function myMap() {
     var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
 }
 
+const navbarHeight = document.querySelector('.header_section').offsetHeight;
 
+// Smooth scroll function with offset
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
 
-      document.querySelector(this.getAttribute('href')).scrollIntoView({
-        behavior: 'smooth',
-        block: 'start' // Ensures the section starts from the top
-      });
+    const targetId = this.getAttribute('href');
+    const targetElement = document.querySelector(targetId);
+
+    // Scroll to the element, adjusted for the height of the navbar
+    window.scrollTo({
+      top: targetElement.offsetTop - navbarHeight, // Adjust for navbar height
+      behavior: 'smooth'
     });
   });
+});
