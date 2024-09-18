@@ -766,6 +766,39 @@ a:focus {
   margin-top: 45px;
 }
 
+.carousel-inner {
+  height: 600px;
+  display: flex;
+  align-items: center;
+}
+
+.carousel-item {
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-fade .carousel-item {
+  opacity: 0;
+  transition-property: opacity;
+}
+
+.carousel-fade .carousel-item.active {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-item img {
+  max-height: 500px;
+  width: 100%;
+  object-fit: cover;
+}
+
 .client_section .owl-carousel .owl-nav .owl-prev,
 .client_section .owl-carousel .owl-nav .owl-next {
   width: 55px;
