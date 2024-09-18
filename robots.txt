@@ -1,0 +1,2 @@
+robUser-agent: *
+Disallow: /
