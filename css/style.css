@@ -127,6 +127,10 @@ a:focus {
   z-index: -1;
 }
 
+.carousel-item .row .col-md-6 h1, .carousel-item .row .col-md-6 p {
+  text-align: center;
+}
+
 .hero_area .hero_bg_box .bg_img_box {
   min-width: 100%;
   min-height: 100%;
@@ -156,6 +160,10 @@ a:focus {
   padding: 15px 0;
 }
 
+.header_section .detail-box{
+  text-align: center;
+}
+
 .header_section .container-fluid {
   padding-right: 25px;
   padding-left: 25px;
@@ -164,11 +172,6 @@ a:focus {
 .navbar-brand {
   display: flex;
   align-items: center; /* This centers the children vertically */
-}
-
-
-.read-more-about-us{
-  align-items: center;
 }
 
 
@@ -515,6 +518,10 @@ a:focus {
   color: #ffffff;
 }
 
+.about_section .col-md-6 h3, .about_section .col-md-6 p{
+text-align: center;
+}
+
 .about_section .heading_container {
   margin-bottom: 45px;
 }
@@ -550,6 +557,16 @@ a:focus {
 }
 
 .about_section .btn-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 10px;
+}
+
+.col-md-6 .btn-box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
