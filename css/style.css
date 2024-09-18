@@ -4,6 +4,11 @@ body {
   color: #0c0c0c;
   background-color: #ffffff;
   overflow-x: hidden;
+  /*padding-top: 70px; Adjust based on the height of the navbar */
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 .layout_padding {
@@ -142,6 +147,12 @@ a:focus {
 }
 
 .header_section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Ensures the navbar is on top of other elements */
+  background-color: #06014b; /* Ensure background is solid to prevent transparency */
   padding: 15px 0;
 }
 
