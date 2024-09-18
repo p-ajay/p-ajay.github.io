@@ -62,3 +62,31 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
   });
 });
+
+
+//Close Navmenu once a menu item is clicked
+document.querySelectorAll('.navbar-nav a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      const navbarCollapse = document.querySelector('.navbar-collapse');
+      const isNavbarExpanded = navbarCollapse.classList.contains('show');
+
+      if (isNavbarExpanded) {
+        // Collapse the navbar after clicking on a nav link
+        $('.navbar-collapse').collapse('hide');
+      }
+    });
+  });
+
+//Event Listener to not reload page on search button submit 
+document.getElementById('searchForm').addEventListener('submit', function(event) {
+event.preventDefault(); // Prevents the form from submitting and reloading the page
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+    const isNavbarExpanded = navbarCollapse.classList.contains('show');
+
+    if (isNavbarExpanded) {
+        // Collapse the navbar after clicking on a nav link
+        $('.navbar-collapse').collapse('hide');
+    }
+// You can add your search functionality here
+console.log('Search button clicked, no reload');
+});
