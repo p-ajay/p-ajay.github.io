@@ -4,7 +4,7 @@ body {
   color: #0c0c0c;
   background-color: #ffffff;
   overflow-x: hidden;
-  /*padding-top: 70px; Adjust based on the height of the navbar */
+  padding-top: 65px; /*Adjust based on the height of the navbar */
 }
 
 html {
