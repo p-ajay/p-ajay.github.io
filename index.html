@@ -743,12 +743,13 @@ TheMediaHub helped us unlock new opportunities with their innovative social medi
           <h4>
             Subscribe
           </h4>
-          <form action="#">
-            <input type="text" placeholder="Enter email" />
-            <button type="submit">
-              Subscribe
+          <form id="subscribeForm">
+            <input type="email" placeholder="Enter your email" id="emailInput" required>
+            <button type="submit" class="btn subscribe-btn"><span>Subscribe</span>
+              <div id="loader" class="loader"></div> <!-- Hidden loader -->
             </button>
           </form>
+          <p id="subscribeMessage" style="display: none;">Thank you for subscribing!</p>
         </div>
       </div>
     </div>

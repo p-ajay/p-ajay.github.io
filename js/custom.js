@@ -90,3 +90,61 @@ event.preventDefault(); // Prevents the form from submitting and reloading the p
 // You can add your search functionality here
 console.log('Search button clicked, no reload');
 });
+
+//JS to update email to google sheets on submit
+// https://script.google.com/macros/s/AKfycbwuhlTYcodIv4KtxJ3gqahg9BqtOeNaaLin8hIp7JUE9GJkMpgBYpAODiJN3vSUKdhCMw/exec
+
+document.getElementById('subscribeForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent form submission from reloading the page
+
+  // Get the email value from the form
+  const email = document.getElementById('emailInput').value;
+
+  // Validate the email
+  if (validateEmail(email)) {
+    // Show the loader inside the button and hide the subscribe text
+    document.querySelector('.subscribe-btn span').style.opacity = '0'; // Hide the text
+    document.getElementById('loader').style.display = 'block';
+
+    // URL of your Google Apps Script web app
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwuhlTYcodIv4KtxJ3gqahg9BqtOeNaaLin8hIp7JUE9GJkMpgBYpAODiJN3vSUKdhCMw/exec';
+
+    // Data to send
+    const formData = new FormData();
+    formData.append('email', email);
+
+    // Send the data to the Google Sheet using fetch
+    fetch(scriptURL, { method: 'POST', body: formData })
+      .then(response => response.json())
+      .then(response => {
+        if (response.result === 'success') {
+          // Hide the loader
+          document.getElementById('loader').style.display = 'none';
+
+          // Show thank-you message and hide the form
+          document.getElementById('subscribeMessage').style.display = 'block';
+          document.getElementById('subscribeForm').style.display = 'none';
+        } else {
+          // Hide the loader and show an error
+          document.getElementById('loader').style.display = 'none';
+          document.querySelector('.subscribe-btn span').style.opacity = '1'; // Show the text back
+          alert('There was a problem with your subscription.');
+        }
+      })
+      .catch(error => {
+        // Hide the loader and show an error
+        document.getElementById('loader').style.display = 'none';
+        document.querySelector('.subscribe-btn span').style.opacity = '1'; // Show the text back
+        console.error('Error!', error.message);
+        alert('There was an error submitting your email.');
+      });
+  } else {
+    alert('Please enter a valid email address.');
+  }
+});
+
+// Email validation function
+function validateEmail(email) {
+  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return re.test(String(email).toLowerCase());
+}
