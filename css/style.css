@@ -1045,6 +1045,43 @@ text-align: center;
   color: #00bbf0;
 }
 
+/* calendly section */
+
+.scheduler-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh; 
+  background-color: #00204a;
+  color: #ffffff;
+}
+
+.scheduler-section .container{
+  height: 100vh;
+  width: 100%;
+}
+
+.scheduler-container .heading_container{
+  display: flex;
+  justify-content: center;
+  width: 100%; /* Ensures the heading is centered */
+
+}
+
+.scheduler-section .calendly-inline-widget {
+  margin-top: 20px;
+  width: 100%; /* Full width of the available space */
+  min-width: 320px;
+  max-width: 1200px; /* Optional max-width for the widget */
+  height: 100vh; /* Dynamically adjusts the height */
+  border: none; /* Remove any borders */
+  padding: 0 15px;
+  flex: 0 1 auto;
+  align-self: center;
+}
+
 /* footer section*/
 .footer_section {
   position: relative;

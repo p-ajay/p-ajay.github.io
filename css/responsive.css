@@ -105,3 +105,14 @@
     max-width: 1170px;
   }
 }
+
+@media (max-width: 768px) {
+  .scheduler-container {
+    padding: 10px; /* Add some padding for smaller screens */
+  }
+
+  .calendly-inline-widget {
+    width: 100%; /* Ensure the widget takes full width on smaller screens */
+    height: 70vh; /* Slightly reduce height for smaller screens */
+  }
+}
