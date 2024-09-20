@@ -158,6 +158,11 @@ a:focus {
   z-index: 1000; /* Ensures the navbar is on top of other elements */
   background-color: #06014b; /* Ensure background is solid to prevent transparency */
   padding: 15px 0;
+  transition: top 0.3s ease; /* Smooth hide/show transition */
+}
+
+.navbar-hidden {
+  top: -100px;
 }
 
 .header_section .detail-box{
@@ -173,6 +178,7 @@ a:focus {
   display: flex;
   align-items: center; /* This centers the children vertically */
 }
+
 
 
 .navbar-brand span {

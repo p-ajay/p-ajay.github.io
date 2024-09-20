@@ -149,4 +149,27 @@ function validateEmail(email) {
   return re.test(String(email).toLowerCase());
 }
 
+function navbarscroll(){
+  let lastScrollTop = 0;
+  const navbar = document.getElementById('navbarsection');
+
+  window.addEventListener('scroll', function() {
+    // Use window.scrollY instead of window.pageYOffset
+    let currentScroll = window.scrollY || document.documentElement.scrollTop;
+
+    if (currentScroll > lastScrollTop) {
+      // Scrolling down, hide the navbar
+      navbar.classList.add('navbar-hidden');
+    } else {
+      // Scrolling up, show the navbar
+      navbar.classList.remove('navbar-hidden');
+    }
+
+    // Update the last scroll position
+    lastScrollTop = Math.max(0, currentScroll); // Ensure scroll doesn't go negative
+  });
+}
+
+navbarscroll();
+
 
