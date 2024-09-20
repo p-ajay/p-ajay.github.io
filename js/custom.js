@@ -78,7 +78,7 @@ document.querySelectorAll('.navbar-nav a').forEach(function (link) {
   });
 
 //Event Listener to not reload page on search button submit 
-document.getElementById('searchForm').addEventListener('submit', function(event) {
+/*document.getElementById('searchForm').addEventListener('submit', function(event) {
 event.preventDefault(); // Prevents the form from submitting and reloading the page
     const navbarCollapse = document.querySelector('.navbar-collapse');
     const isNavbarExpanded = navbarCollapse.classList.contains('show');
@@ -89,7 +89,7 @@ event.preventDefault(); // Prevents the form from submitting and reloading the p
     }
 // You can add your search functionality here
 console.log('Search button clicked, no reload');
-});
+});*/
 
 //JS to update email to google sheets on submit
 // https://script.google.com/macros/s/AKfycbwuhlTYcodIv4KtxJ3gqahg9BqtOeNaaLin8hIp7JUE9GJkMpgBYpAODiJN3vSUKdhCMw/exec
