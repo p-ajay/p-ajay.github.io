@@ -702,8 +702,8 @@ text-align: center;
 
 .team_section .team_container .box .img-box img {
   width: 120px;
-  border-radius: 100%;
-  border: 5px solid #ffffff;
+  height: 150px;
+  object-fit: contain;
 }
 
 .team_section .team_container .box .detail-box {
